@@ -9,7 +9,9 @@ A hosted multi-tenant runtime for the Mariella engine. An orchestrator (Node) dr
 - **Folder structure preserved in both directions** (W67, 2026-07-27) — CMA's file transfer carries a filename but never a folder, so `/` is encoded as `~` and decoded on harvest. A consultant run wrote 8 files that landed as real nested directories including a 2-deep path, and a client run against the re-keyed store located and quoted from `brand-voice.md`.
 - **Mount paths corrected** (2026-07-27) — CMA re-roots `mount_path` under `/mnt/session/uploads`; the bootstraps now name the real effective paths, so the agent reads the engine directly instead of hunting for it every run.
 
-**Honestly not done:** Vaults and the GA4 / Search Console / LinkedIn integrations (so audits run on public-web inference today), the client-facing interface, the aggregation warehouse, and the always-on host — the orchestrator runs **from a laptop**. The consultant→client handoff has proven transport but not handoff: it gates on `marketing-strategy-confirmed.md`, which needs a full consultant pass no run has completed.
+**And the engine itself is already in production on the older client-hosted path** — this is the stronger proof and it predates the runtime work. Mariella delivered a marketing audit for **Wink Models** (26 Jun) off real client data with Klaviyo and GA4 connected; and **CJ Robinson at T&G uses it daily** — 90-day strategy and budget, event ROI modelling against a $50k-per-10-attendees target, monthly content plans, newsletter click-rate analysis, and recurring scheduled tasks that keep its own SEO/AEO/GEO guidance current.
+
+**Honestly not done on the hosted platform:** Vaults and the integrations re-wired through them, the client-facing interface, the aggregation warehouse, and the always-on host — the orchestrator runs **from a laptop**. The consultant→client handoff has proven transport but not handoff: it gates on `marketing-strategy-confirmed.md`, which needs a full consultant pass no run has completed. These are gaps in the *migration target*, not in the product as delivered.
 
 ## Tool Used
 
@@ -19,9 +21,11 @@ Deliberately **not** v0 or Lovable. The bet is about a *runtime* — multi-tenan
 
 ## Prototype Link
 
-**GAP — no shareable clickable URL.** The working proof is `orchestrator/run-session.mjs` plus the verified runs above, in a private repo.
+**Not a mock — a product in use.** The assignment asks for a clickable prototype; what exists is better evidence than one. There is a recorded internal walk-through (*Mariella Collateral Walk-Through*, 22 Jul, in Drive) and two live tenants.
 
-To close it (15 min): mock the client-facing session view in v0 — the approval gate is the one screen that shows why this is valuable — or record a 60-second capture of a live run. The runtime is the real artifact; the link is the assignment.
+**The real gap is a client-facing demo**, and it is already an owned action from the 22 Jul session: CJ — as the primary user — is to produce a screen recording or case study showing the actual workflow, because the team confirmed it has no formal demo. That artifact is what belongs in this field, and it also unblocks sales collateral.
+
+Interim for M6: link the walk-through recording, or a 60-second capture of a live run.
 
 ## AI Value Archetype
 

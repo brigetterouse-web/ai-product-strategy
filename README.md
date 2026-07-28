@@ -29,7 +29,8 @@
 - **Vulnerability Scores:** Moat **4**/5 · Data **4**/5 · Platform **2**/5
 - **Top Risk:** Three of four learning loops are strong inside a tenant and the fourth is zero across them — the product gets better for every client it serves and never better as a company, while the asset doing the work is portable text on the runtime of the vendor most likely to replace it.
 - **Confidence:** **M**
-- **Prototype:** working orchestrator, consultant setup proven end-to-end + folder-preserving harvest verified (W67); runs from a laptop, no shareable link yet — see `01-the-bet/prototype.md`
+- **Live today:** T&G-operated on the client-hosted path — **Wink Models** (audit delivered 26 Jun off real data; Klaviyo + GA4 connected) and **Think & Grow** (CJ Robinson, daily power user: 90-day strategy, event ROI, content plans, scheduled tasks). The T&G-hosted platform is the migration target and is half-built.
+- **Prototype:** a product in use, not a mock. Recorded walk-through exists; the open action is a client-facing demo — see `01-the-bet/prototype.md`
 - **Kill Criteria:** >30% rework on two consecutive tenants · AI COGS >25% of retainer at target usage · no aggregation plane by 31 Dec 2026 · integrations not live by 30 Sep 2026
 
 → Details: [`01-the-bet/`](01-the-bet/)
@@ -58,9 +59,9 @@
 
 - **Gross Margin (current):**
 - **Gross Margin (AI-adjusted):**
-- **Pricing Model:**
-- **Cascading Strategy:**
-- **Break-even at:**
+- **Pricing Model:** decided 22 Jul — subscription (not one-off; a $20–30k one-off was rejected), **13-month contract at the 12-month price** (first month as cooling-off, securing a 12-month commitment), API cost bundled into the base up to a credit allowance, **overage invoiced the following month** with an alert at 90% rather than a hard stop.
+- **Cascading Strategy:** none today — one frontier model for every stage. See the Routing row in `02-the-moat/kill-switch.md`.
+- **Break-even at:** unknown — **no cost view exists** (model chosen on feel, 27 Jul). This is W45 and it is this module's work.
 
 → Details: [`03-the-margin/`](03-the-margin/)
 

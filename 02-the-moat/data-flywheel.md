@@ -15,7 +15,7 @@
 
 ### Correction Loop — 4/5
 
-**What you capture today:** every PRODUCE turn is captured to `signals.csv`. Real-time signals accumulate in `client-learnings.md` with timestamps and 60-day archive hygiene. `product-feedback.md` separates engine complaints from client-content signals.
+**What you capture today:** every PRODUCE turn is captured to `signals.csv`. Real-time signals accumulate in `client-learnings.md` with timestamps and 60-day archive hygiene. `product-feedback.md` separates engine complaints from client-content signals. This is observed, not aspirational: the weekly "Maria Upgrades" session exists to feed corrections back into the engine, and CJ maintains its standing instructions on a recurring scheduled task rather than ad hoc.
 
 **How it compounds:** two levels, and the second is the unusual one. Tactically, signals apply as overrides on the next run — rejected hook types stop being suggested, deferred ideas re-surface as "previously deferred." **Strategically, the LIVING STRATEGY amend-prompt watches for *patterns* — a pillar repeatedly rejected, a stated change in ICP or positioning — and asks the client whether to amend `marketing-strategy-confirmed.md`, logging what drove the change.** Most products' correction loops improve the next output. This one can change the plan that all future outputs derive from.
 
@@ -25,7 +25,7 @@
 
 **What you capture today:** durable per-tenant `brand-voice.md`, `style-guide.md`, `audience.md`, plus the PLAN layer the client confirms and owns — pillars, calendar, budget/ROI. Guardrails enforce it on every asset: the PILLAR/ICP check refuses to present an idea that doesn't map to a confirmed pillar.
 
-**How it compounds:** after a few months a tenant's PLAN layer encodes decisions no competitor can see, and the engine's output is mistuned for anyone else's brand. That mistuning *is* the switching cost.
+**How it compounds:** after a few months a tenant's PLAN layer encodes decisions no competitor can see, and the engine's output is mistuned for anyone else's brand. That mistuning *is* the switching cost. Six weeks into T&G's own tenant it already holds a 90-day strategy, an event ROI model built to a specific revenue target, and a monthly content plan — none of which transfers anywhere.
 
 **Why not 5:** a human consultant seeds and curates the files. Nothing is learned automatically.
 
