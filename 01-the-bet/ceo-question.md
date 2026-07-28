@@ -8,9 +8,8 @@ Three sentences. No polish. Private until M6, where the gap between this and you
 
 ## My answer — 2026-07-28
 
-*(draft to replace)*
 
-We're building Mariella: an AI marketing engine that runs a client's weekly marketing cadence on their own live data, and we're moving it from client-hosted to T&G-hosted multi-tenant so we can host it properly and learn across clients. The strategy is to own the professional-services marketing workflow end to end rather than sell another content tool. Right now the engine works and the clients are real, but the hosting, the pricing and the cross-client learning are all still ahead of us.
+We're building an AI marketing engine that aims to create data-led martketing across multiple siloed system. It runs an audit and integrations a client's various sytems so that marketers can plan their stragedy as well as produce outcomes that are based on not only competitive best practice (AEO,SEO & GEO) but based on their own data on 'what works.' The strategy is to own the professional-services marketing workflow end to end rather than sell another content tool. 
 
 ---
 
