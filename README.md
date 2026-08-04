@@ -15,7 +15,7 @@
 | **The Moat** | M2 | [x] | `02-the-moat/` |
 | **The Margin** | M3 | [x] | `03-the-margin/` |
 | **The Contract** | M4 | [x] | `04-the-contract/` |
-| **The Guardrails** | M5 | [ ] | `05-the-guardrails/` |
+| **The Guardrails** | M5 | [x] | `05-the-guardrails/` |
 | **The Pitch** | M6 | [ ] | `06-the-pitch/` |
 
 ---
@@ -89,11 +89,12 @@
 
 **What breaks when this scales — and what compounds.**
 
-- **Compounding System:** [describe feedback loops]
-- **Governance Posture:** [approach]
-- **Shadow AI Status:** __ tools found, __ triaged
-- **Agent Boundaries:**
-- **Regulatory Exposure:**
+- **Compounding System:** **five loops — 2 active, 1 broken, 2 missing.** Recursive learning and cross-domain transfer are genuinely active *within* a tenant. **Attribution learning is broken**: campaign IDs are minted at publish but the deal outcome never returns where CRM connectivity is partial, so the engine recommends on engagement proxies while the ROI signal sits unjoined. Network intelligence and the eval loop are **missing** — and they are the only two that compound at company level, one shared pipe away from both.
+- **Freeze Test:** frozen three months, Mariella **still improves for an existing tenant** (signals and PLAN keep accumulating, independent of any model upgrade) and **learns nothing transferable as a company** — tenant three would onboard at exactly tenant one's quality. **Verdict: compounds per client, scales as a company.** Reproduces the M2 flywheel finding by an independent route.
+- **Governance Posture:** **Level 2 → Level 3.** Governance is GTM for this product specifically, because the client publishes the output under their own brand — "show me how you test this" is the purchase decision, not a procurement formality. Two artifacts already sell: the Held-tier distribution showing the engine declining when it should, and the credential vault making "no staff member can read your tokens" structural rather than promised.
+- **Agent Boundaries:** read and draft auto · **publish, send and PLAN amendment never auto** · **no write-back tool exists in the allow-list at all**, removing a whole class of irreversible action rather than governing it · shared cross-tenant memory permitted **only in aggregate**, which is what makes the network loop legal to build · PLAN-FIRST gate doubles as the stop-the-chain trigger.
+- **Shadow AI Status:** **5 workarounds — 1 build · 2 partner · 1 re-opens M4 · 1 ignore.** Adjacent spend **~$90–160/tenant/month (modelled)**, which at 4–6% of the subscription is not a pricing threat — the finding is *shape*: three of five are Mariella's output being carried somewhere else, so the product boundary is drawn one step short of where the work finishes. The **trust-gap** row (users re-verifying an already-sourced figure) is the one that matters, because it reports a weakness in something already shipped.
+- **Regulatory Exposure:** EU AI Act **limited risk** (transparency satisfied structurally by the approval gate) · **Australian Privacy Act / APPs** as the primary regime · GDPR where a tenant holds EU contacts · **email drafted never sent, so the client stays sender of record** — a deliberate allocation of liability, not an accident of design.
 
 → Details: [`05-the-guardrails/`](05-the-guardrails/)
 
