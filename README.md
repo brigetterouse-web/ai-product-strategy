@@ -16,7 +16,7 @@
 | **The Margin** | M3 | [x] | `03-the-margin/` |
 | **The Contract** | M4 | [x] | `04-the-contract/` |
 | **The Guardrails** | M5 | [x] | `05-the-guardrails/` |
-| **The Pitch** | M6 | [ ] | `06-the-pitch/` |
+| **The Pitch** | M6 | [x] | `06-the-pitch/` |
 
 ---
 
@@ -63,7 +63,7 @@
 - **Feature split:** Leader (PLAN + cadence) $35/mo · Filler (reports, visibility check) $3.50/mo · Killer recurring (campaign production) $18/mo · Killer one-off (consultant setup) $3.46 measured, charged as an onboarding fee.
 - **Pricing Model:** subscription (not one-off; a $20–30k one-off was rejected), **13-month contract at the 12-month price** (first month as cooling-off, securing a 12-month commitment), API cost bundled into the base up to a **$120/month credit allowance** (sized against measured usage), **overage invoiced the following month** with an alert at 90% rather than a hard stop.
 - **Cascading Strategy:** **does not apply to this product.** The realistic ratio is ~5% cheap / 95% frontier, not 70/30 — models are session-scoped on Managed Agents, switching them destroys the caching that saves 90%, and by the routing rule almost every session is strategy or client-facing copy. Worth **$1.40/tenant/month (0.06 points)**. The real decision is a whole-product model choice (Opus vs Sonnet 5, **41% measured**, ~$24/tenant/month), and the better levers are **effort tuning** and **session length** — cache reads are 65% of cost and compound within a session.
-- **Break-even at:** infrastructure is recovered by **well under one tenant** (the $19/mo box against $2,310/tenant/month of contribution). Payback against the platform build cost is unquantified — build cost is not yet costed.
+- **Break-even at:** infrastructure is recovered by **well under one tenant** (the $19/mo box against $2,310/tenant/month of contribution). The platform build is costed in M6 at **$150k over six months**, repaying against **5.4 tenants held for one year**.
 - **The real risk:** human oversight, not tokens. One hour per tenant per month holds 92%; four hours takes it to **77%**. A $300 self-serve tier lands at **68%**, and **49%** on a heavy tenant — the argument for pricing against a salary, not a seat.
 
 → Details: [`03-the-margin/`](03-the-margin/)
@@ -104,10 +104,14 @@
 
 **How you get this funded, shipped, and adopted.**
 
-- **Horizon 1 (Now):**
-- **Horizon 2 (Next):**
-- **Horizon 3 (Bet):**
-- **Board Narrative:** [1-sentence thesis]
-- **Key Metric:**
+Windows are **AI-compressed** — H1 0–4 weeks, H2 1–3 months, H3 3–6 months. A twelve-month H3 is planning in a world that no longer exists; three months is roughly one frontier cycle.
+
+- **Horizon 1 (Ship · 0–4 weeks):** freeze the 12-row golden set and wire provenance checks into assembly · eval dashboard v1 · per-stage model field as a provider-swap seam · effort tuning on mechanical sessions. **Three of the six board metrics do not exist until H1 lands**, which is the cleanest argument for funding it first.
+- **Horizon 2 (Validate · 1–3 months):** the shared aggregation pipe · benchmark-as-report v1 · deal-outcome join promoted to a gating onboarding requirement · oversight down to ≤1 hr/tenant/month · confidence legibility at the point of use. **Every bet carries a number, a window and a verb** — e.g. *fewer than 3 benchmark opt-ins by week 10 → stop building toward engine-input and treat the benchmark as collateral only.*
+- **Horizon 3 (Explore · 3–6 months):** benchmark as **engine input** (the prize — it compounds into the decision layer where the moat already is) · outcome-based pricing pilot metering attributed enquiries · self-hosted-sandbox drill · publishing autonomy behind the >99% bar (the uncomfortable one, because it trades the liability position that keeps the client as sender of record).
+- **Board Narrative:** a marketing team of one to three at a firm spending $200K–$1M a year **cannot fund the hire that would make that spend work** — so we sell them that person's job, running. Thesis first; the technology stays invisible until the risks section.
+- **Key Metric:** **Inference ROI ~42×** ($2,500 revenue against $59 AI COGS) — the figure that ends the "AI will eat your margin" question in one number. Then move on, because **one hour of human oversight costs more than twice the month's inference**, and that is what the roadmap actually manages.
+- **The Ask:** **$150k over six months** — $95k engineering (1 senior FTE) · $35k product/labelling (0.5 FTE) · $12k inference + infra · $8k eval tooling. **Repays against 5.4 tenants held for one year.** Hard review at **month 3** against the H2 kill criteria. A capacity ask, not a strategy ask — pricing is already settled.
+- **Weakest sentence, rewritten:** the six-lens evaluation flagged *"build cost is not yet costed"* as fatal in a funding conversation. The ask above is the rewrite — M3 named the gap, M6 priced it.
 
 → Details: [`06-the-pitch/`](06-the-pitch/)
