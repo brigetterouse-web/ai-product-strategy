@@ -1,19 +1,17 @@
 # Three-Axis Diagnostic
 
-**Product:** Mariella — a multi-tenant AI marketing engine for lean B2B marketing teams (Think & Grow)
-**Engine versions:** consultant v7.5 / client v8.0 · **Operating model:** PLAN & PRODUCE (2 modes)
+**Product:** Mariella — a multi-tenant, hosted AI marketing engine for lean B2B marketing teams (Think & Grow)
+**Operating model:** PLAN & PRODUCE (two modes)
 **Path:** B — AI-native. The intelligence is the product, not a sidebar.
 **Dominant archetype:** Orchestrator (Copilot surface, Creator output)
-**Date:** 2026-07-28
 
-**ICP:** Australian-focused. Lean marketing teams of 1–3, $200K–$1M+ annual marketing spend, AI-literate and actively avoiding "AI slop" (set 14 Jul; C-suite roles deliberately excluded from targeting). Two-buyer GTM: the founder buys *desire + speed*, the marketer buys *the data story*. The alternative it displaces is a **$120–180k/yr content hire**.
+## What the product is
 
-## Deployment state — read this before the scores
+Mariella is a hosted marketing function. Each client is a tenant on Think & Grow's server with their own isolated store; they connect their own systems (GA4, Search Console, LinkedIn, email/CRM) through a credential vault so no T&G staff member ever sees a token. The engine runs two modes: **PLAN** owns a living decision layer — confirmed strategy, content pillars, the content and event calendar, budget and per-event ROI, campaign plans — and **PRODUCE** derives every asset from that plan: social posts, ads, lead magnets, emails, website copy, testimonials. Every publishing item carries a **campaign ID** that threads content → traffic → enquiry → deal. Human approval is required on every asset; nothing publishes without an explicit trigger. Cross-tenant performance is aggregated into a company-level benchmark plane.
 
-Two delivery paths exist, and conflating them produces a much gloomier diagnosis than the truth.
+**ICP:** Australian-focused. Lean marketing teams of 1–3, $200K–$1M+ annual marketing spend, AI-literate and actively avoiding "AI slop." Two-buyer GTM: the founder buys *desire + speed*, the marketer buys *the data story*. It displaces a **$120–180k/yr content hire**.
 
-- **Live today — T&G-operated, client-hosted / Drive-folder.** Mariella is in production against real systems. **Wink Models**: marketing audit delivered 26 Jun off real client data (revenue mix, revenue by state, 97.3% repeat-business split, top clients by deal count), with Klaviyo and GA4 connected, HubSpot and LinkedIn partial. **Think & Grow itself**: CJ Robinson is a daily power user — 90-day marketing strategy and budget, event ROI modelling (targeting a $50k deal per 10 attendees), monthly content plans, newsletter click-rate analysis, LinkedIn ads benchmarking, and recurring scheduled tasks that keep SEO/AEO/GEO guidance current. A weekly "Maria Upgrades" working session has run since 16 Jun.
-- **In build — the T&G-hosted CMA platform.** Vaults, per-tenant S3, the orchestrator, the client-facing interface. This is the *migration target*. Its gaps (Vaults unbuilt, integrations not yet wired through Vaults, orchestrator on a laptop) are gaps in the platform, **not** in the product as delivered.
+**Commercial model:** subscription (a $20–30k one-off was considered and rejected), 13-month contract at the 12-month price, API cost bundled to a credit allowance with overage invoiced the following month and an alert at 90%.
 
 > Scored 1 = pain, 5 = strong. Calibration: Figma = deep moat, thin ChatGPT wrapper = shallow.
 
@@ -29,15 +27,15 @@ Two delivery paths exist, and conflating them produces a much gloomier diagnosis
 
 **Workflow depth × switching cost.**
 
-**Rationale:** Mariella runs a **two-mode operating model**. PLAN owns the living decision layer — confirmed strategy, content pillars, the content and event calendar, budget and per-event ROI, campaign and lead-magnet plans — and PRODUCE derives every asset (post, ad, lead magnet, email, website copy, testimonial) *from* that plan, through a PLAN-FIRST gate that refuses to fabricate a pillar to proceed. Every PLAN item that will publish carries a **stable campaign ID** threading content → traffic → enquiry → deal.
+**Rationale:** Mariella isn't a content generator with a briefing document — it's where the marketing function makes decisions. PLAN holds the confirmed strategy, the pillar set and the calendar; PRODUCE cannot route around them, because a PLAN-FIRST gate stops any request that lacks a plan input and explicitly refuses to fabricate a pillar to proceed. The tenant's knowledge base, learnings and campaign-ID history live in T&G's hosted store, and the client's data systems are connected through T&G's vault.
 
-**The depth is observed, not theorised.** CJ's usage is the evidence: she doesn't ask it to write posts, she asks it to build the 90-day strategy, model event ROI against a revenue target, and maintain its own standing instructions on a schedule. That is a tool sitting inside how the marketing function *decides*, and scheduled tasks mean it runs whether or not anyone opens it. Switching means abandoning the confirmed strategy, the pillars, the calendar, the campaign-ID history and the attribution lineage — rebuilding how the function operates, not changing who drafts the copy.
+Leaving means re-deciding the strategy, rebuilding the pillars and calendar, re-authorising every integration, and abandoning the attribution lineage that connects past marketing to past revenue. That's rebuilding how the function operates, not swapping which tool writes the posts.
 
-**Workflow depth on the spectrum:** genuine **workflow layer**; for a single-operator marketing function like CJ's it is approaching an operating system.
+**Workflow depth on the spectrum:** genuine **workflow layer** — for a lean marketing team it approaches an operating system.
 
-**Named attacker:** **HubSpot Breeze** (hubspot.com → Breeze AI). Wink's HubSpot is already in the stack and the attribution spine's join key is the CRM contact/company — so Breeze attacks the exact seam Mariella has to reach across, from the inside, with no integration to negotiate.
+**Named attacker:** **HubSpot Breeze** (hubspot.com → Breeze AI). Clients already pay for HubSpot; Breeze agents sit where the CRM and campaign data already live. It attacks the exact seam the attribution spine has to reach across — the CRM contact/company join key — from the inside, with no integration to negotiate.
 
-**Why not 5:** two tenants, one of them itself. Switching cost is demonstrated for a handful of operators, not a book of clients. Delivery is still manual last-mile — updating a live engine means a human re-pasting or a script touching one Drive file, with no auto-deploy — so version control across clients is a promise the hosted platform makes, not a property the product has. And the hosted path that would make the moat durable is half-built.
+**Why not 5:** the client's strategy is deliberately *theirs* — they confirm and own the PLAN layer, which is right for trust and caps lock-in by design. The outputs are consumed outside the product, so nothing in the client's business stops if they leave. And a competitor could re-onboard the same client with the same integrations inside a few weeks. Switching is expensive; it isn't architectural.
 
 ---
 
@@ -45,15 +43,15 @@ Two delivery paths exist, and conflating them produces a much gloomier diagnosis
 
 **Proprietary signal that compounds.**
 
-**Rationale:** Three compounding mechanisms, all now running against real data:
+**Rationale:** Three compounding mechanisms, and the third is what hosting exists to create:
 
 1. **The attribution spine.** Campaign IDs born in PLAN join published asset → traffic → enquiry → deal. That lineage — *which marketing decision produced which revenue* — is signal no platform holds: HubSpot has the deal but not the plan-to-asset provenance; Semrush has search performance but no deal outcome.
-2. **The living-strategy amend loop.** A pattern — a pillar repeatedly rejected, a stated change in ICP or positioning — prompts the engine to ask whether to amend the confirmed strategy, logging what drove the change. The plan learns, not just the next draft.
-3. **Per-turn capture.** Every PRODUCE turn lands in `signals.csv`; real-time signals accumulate in `client-learnings.md` with 60-day archive hygiene. CJ is separately tracking task-level time savings to build the internal business case — a usage dataset most vendors would have to run a research project to get.
+2. **The living-strategy amend loop.** A pattern — a pillar repeatedly rejected, a stated change in ICP or positioning — prompts the engine to ask whether to amend the confirmed strategy, and logs what drove the change. The plan learns, not just the next draft. Every PRODUCE turn is captured; real-time signals accumulate per tenant with 60-day archive hygiene.
+3. **The cross-tenant benchmark plane.** Normalized, source-tagged performance records (search, site analytics, AI visibility, email) aggregate to company-level benchmarks every tenant can read, and that eventually feed back into PLAN recommendations.
 
-**Why not 5:** all of it compounds **within** a tenant and none of it across tenants. Wink's engine learns nothing from T&G's and vice versa. A per-tenant loop is a switching cost, not a data moat.
+**Named attacker:** **Semrush** (semrush.com). Cross-account search and content performance across millions of domains. Any market-level claim Mariella makes from aggregated tenant data, Semrush can already make from a far bigger sample — so the benchmark has to win on *relevance to a cohort*, not on volume.
 
-**Named attacker:** **Semrush** (semrush.com). Cross-account search and content performance across millions of domains. Any market-level claim T&G eventually makes from aggregated client data, Semrush can already make from a far bigger sample — see the Network loop in `../02-the-moat/data-flywheel.md`.
+**Why not 5:** the privacy model deliberately caps what pools. CRM, audience and email records never enter the aggregation plane, the plane is company-level only with a minimum-cohort floor, and no verbatim content crosses tenants. That's the right call — it's what makes the trade sellable — but it means the pooled signal is thinner than an unconstrained competitor's.
 
 ---
 
@@ -61,26 +59,26 @@ Two delivery paths exist, and conflating them produces a much gloomier diagnosis
 
 **If a platform ships your wedge natively tomorrow, then what?**
 
-**Rationale:** The engine is ~116KB (client) / ~189KB (consultant) of markdown executing on a frontier Claude model. It exceeds the hosted runtime's 100k system-prompt cap, so it is mounted as a file per session — an honest description of the asset: **the product is portable text on someone else's runtime.** Anthropic ships Agent Skills and a skills marketplace; the open-source marketing-skills library the engine descends from is public and free. T&G made its own fork **private on 22 Jul specifically to protect the engine IP** — correct, and also an admission of how copyable the asset is.
+**Rationale:** The engine is markdown — a written body of marketing judgment — executing on a frontier model. Nothing in the artifact is hard to copy or hard to host. Model vendors ship agent-skill marketplaces, and the open-source marketing-skills library the engine descends from is public and free; T&G's own fork was made private specifically to protect the IP, which is both the correct move and the tell.
 
-The scarce ingredient is the marketing judgment written into the engine. Written judgment is forkable judgment.
+The scarce ingredient is the judgment written into the engine. Written judgment is forkable judgment.
 
-**Named attacker:** **Anthropic** (anthropic.com — Claude Agent Skills / skills marketplace). Uncomfortable, and that is the point: **the same vendor holds both the runtime and the substitute.** Second-order: **OpenAI AgentKit** (openai.com).
+**Named attacker:** **Anthropic** (anthropic.com — Claude Agent Skills / skills marketplace). Uncomfortable, and that's the point: **the same vendor supplies the runtime and the substitute.** Second-order: **OpenAI AgentKit** (openai.com).
 
 ---
 
 ## Top Vulnerability
 
-**Three of Mariella's four learning loops are strong inside a tenant and the fourth is zero across them — so the product gets better for every client it serves and never better as a company, while the asset doing the work is portable text on the runtime of the vendor most likely to replace it.**
+**Three of Mariella's four learning loops compound inside a tenant and the fourth barely compounds across them — so the product gets better for every client it serves while the asset doing the work is portable text on the runtime of the vendor most likely to replace it.**
 
 ## Confidence: **M**
 
-Higher than the architecture alone would justify, because the demand side is answered: a paying client engagement running on live data, an internal power user who reaches for it daily rather than dutifully, a pricing model agreed at leadership level (subscription, 13 months for the price of 12, overage rolled to the next invoice), and a displaced cost — a content hire — that anchors willingness to pay.
+The demand side is answered: a real ICP with a quantified alternative (a content hire), a pricing model agreed at leadership level, paying engagements, and daily power users who reach for it rather than dutifully log in. The architecture is right — per-tenant isolation, credentials the operator can't read, a decision layer the client owns.
 
-Still M rather than H because the thing in production is **T&G-operated with a manual last mile**, and the platform that makes it a scalable product — Vaults, integrations through Vaults, client login, always-on host, aggregation plane — is unfinished. The bet is proven as a service; it is not yet proven as a product.
+M rather than H because the thing that converts this from a well-run service into a compounding product — the cross-tenant benchmark loop — is the newest and least proven part of the design, and because the engine itself is the most copyable asset in the business.
 
 ---
 
 ## Partner stress-test
 
-**Not yet done with a partner.** The score most likely to be too kind is **Contextual Moat (4)**, and the sharpest attack is that n=2 with one of them being yourself is a pilot, not a moat — real switching cost has never been tested by a client who wanted to leave. Redo with a partner and let them argue it down.
+**Not yet done with a partner.** The score most likely to be too kind is **Contextual Moat (4)**. The sharpest attack is that every artifact in the moat is a file the client owns a copy of, and switching cost measured in weeks of re-onboarding is a speed bump, not a moat. Redo with a real partner and let them argue it down.

@@ -1,52 +1,54 @@
 # Kill Switch Audit
 
-**Product:** Mariella (Think & Grow) · **Date:** 2026-07-28
+**Product:** Mariella — hosted multi-tenant AI marketing engine (Think & Grow)
 **The test:** could we swap AI providers in under 48 hours?
 
 ## Vendor Dependency Assessment
 
 | Dimension | Current State | Risk Level | 48-Hour Action |
 |-----------|--------------|------------|---------------|
-| **Provider** | Anthropic, single, deep. Managed Agents runs the agent loop and the per-session sandbox; T&G owns only a Node orchestrator + versioned Agent configs. Engine delivery depends on CMA's Files API, and because CMA's file transfer carries a filename but never a folder, T&G encodes `/` as `~` to preserve structure — a workaround that exists solely because of this vendor. Secrets via per-tenant **Vaults: designed, not built** — so on the live client-hosted path, client credentials are today long-lived API keys and private-app tokens held directly by T&G (see the secrets note below). Per-tenant S3 store is T&G-owned and portable. | **H** | Exercise the escape hatch that DECISIONS already names: run one tenant in CMA self-hosted-sandbox / EC2 mode and record what breaks. "EC2 is an escape hatch only" has never been tested, so it is an assumption, not a hatch. |
-| **Abstraction** | Split, and the split is instructive. The durable store **is** properly abstracted — `localStore` / `S3Store` behind one async list/read/write interface, selected by `MARIELLA_STORE`. The runtime is **not**: `orchestrator/run-session.mjs` calls the SDK's beta agents + sessions APIs directly, and engine delivery is CMA-shaped end to end. | **H** | Extract the session lifecycle behind `runtime.start() / send() / harvest()`, mirroring the store interface that already works in this codebase. Same pattern, already proven here — a day's work. |
-| **Routing** | None. One model for everything — the consultant's deep-research setup pass and the routine weekly refresh alike. **The model choice (Sonnet 5 vs Opus 4.8) was made on feel on 27 Jul with no cost view.** `main`'s agent configs say Opus 4.8; the live agents are at v7 while `main`'s lock is at v2, so the deployed model is not verifiable from the repo. | **H** | Verify which model the v7 agents actually run, then add a per-stage `model` field and route the mechanical stages (search-data refresh, integration maintenance, capture sweep, archive hygiene) to a cheap model. Keep the frontier model for PLAN work, audits and drafting. **This is W45 and it is Module 3's assignment.** |
-| **Eval** | None. There is *run-health* signal — per-figure `[DATA:]` / `[INFERRED]` tags, the RESOLVED / FELL_BACK / INFERRED / ERROR connection ledger, flag-and-hold on degraded runs, SOURCED STATS and PILLAR/ICP guardrails — but nothing scores output quality, so no model swap could be justified and the Sonnet-vs-Opus question cannot be answered with evidence. | **H** | Freeze the verified `thinkandgrow` knowledge files as a golden set and write a pass/fail check: required sections present, every figure source-tagged, no `[INFERRED]` in a gated field, every idea maps to a confirmed pillar. Crude, but enough to score a swap — and enough to settle W45 on evidence instead of feel. |
+| **Provider** | One vendor, deeply. The hosted runtime isn't "we call an API" — it's the vendor's agent control plane: versioned agent configs, per-session sandboxes, the credential vault that keeps client secrets out of the running agent, file mounting for engine delivery, and scheduled runs for the weekly cadence. Every one of those is a product capability we'd otherwise have to build. | **H** | Prove the exit the architecture already names: run one tenant in self-hosted-sandbox mode on T&G infrastructure and record what breaks. "No rewrite" is currently an assumption, not a tested hatch. |
+| **Abstraction** | Split, and the split is instructive. The durable tenant store **is** abstracted — local and object-storage backends behind one interface, selected by config. The runtime is **not**: the orchestrator calls the vendor's agent and session APIs directly, and engine delivery depends on their file mounting. | **H** | Extract the session lifecycle behind a `runtime.start() / send() / harvest()` interface, mirroring the store interface that already works. Same pattern, already proven in this codebase. |
+| **Routing** | None. Every stage runs on one frontier model — the consultant's deep-research setup pass and the routine weekly data refresh alike. | **H** | Add a per-stage model field and route the mechanical stages to the cheap tier. Takes blended cost per request from $0.07 → $0.03 (see `../03-the-margin/cost-curve.md`) — worth doing, though it moves gross margin by under a point. |
+| **Eval** | None. There's *run-health* signal — per-figure source tags, a connection ledger, flag-and-hold on degraded runs, sourced-stats and pillar/ICP guardrails — but nothing scores output quality, so no model swap could be justified on evidence. | **H** | Freeze one verified tenant's knowledge base as a golden set and write a pass/fail check: required sections present, every figure source-tagged, nothing inferred in a gated field, every idea mapping to a confirmed pillar. Crude, but enough to score a swap. |
 
 ## Portability Score
 
 **Locked** — with a documented but untested exit.
 
-All four dimensions are H. Two things stop that being a crisis: the per-tenant store is genuinely portable and T&G-owned, and an escape hatch (CMA self-hosted-sandbox / EC2) is named in the architecture decision. Neither has been exercised. Order of work to reach **Partial**: verify the live model + add the routing field (hours) → runtime interface (a day) → golden-set check (a day) → self-hosted-sandbox drill (a day).
-
-**Separate but adjacent — availability, not portability:** the orchestrator runs **from a laptop today**. The always-on host is a plan (W70), targeting an AWS box reachable over SSM; because the orchestrator is an *interactive* CLI, a `systemd` service with no TTY hits stdin EOF and truncates the run. Forum: the **10 Aug Server Upgrades** session. A product whose delivery depends on one person's laptop being open has a bus-factor problem that no vendor swap fixes.
-
-**Operational trap worth recording:** two Anthropic orgs share the display name "Think & Grow." A profile bound to the wrong one returns `404 Agent not found` on the agent IDs. The UUID is the only disambiguator. Bind a dedicated profile once.
-
-**Secrets — the gap between the promise and the practice.** The Vault design exists precisely because the product's security story is "the credential never enters the AI, and no T&G human can read it." On the live path today that is not yet true: client integrations run on long-lived read-only API keys and private-app tokens that T&G holds, and at least one client's Klaviyo key and HubSpot token are sitting in plaintext in a shared onboarding spreadsheet — the same document whose client-facing copy promises "revocable integrations rather than holding any of your passwords." Rotate and strip before this becomes an M4 trust question or an M5 governance finding. Tracked internally as SEC-1.
+All four dimensions are H. Two things stop that being a crisis: the tenant store is genuinely portable and T&G-owned, and a specific escape hatch (self-hosted sandbox on T&G infrastructure) is named in the architecture. Neither has been exercised. Order of work to reach **Partial**: routing field (hours) → runtime interface (a day) → golden-set check (a day) → self-hosted-sandbox drill (a day).
 
 ### Three actions
 
-- **This week:** verify the live model on the v7 agents; add the per-stage `model` field; cascade the mechanical stages.
-- **This month:** runtime interface behind the store-interface pattern; golden-set eval; put a real cost figure behind the model choice (W45).
-- **This quarter:** self-hosted-sandbox drill on one tenant; land the always-on host (10 Aug). Then decide explicitly whether the Vault egress-substitution guarantee is worth the lock-in — it probably *is*, which is a legitimate answer, but it should be a priced decision rather than an accident.
+- **This week:** per-stage model field; cascade the mechanical stages.
+- **This month:** runtime interface behind the store-interface pattern; golden-set eval.
+- **This quarter:** self-hosted-sandbox drill on one tenant, then decide the lock-in question explicitly rather than by default.
 
-## If Anthropic doubles pricing tomorrow
+## The lock-in is probably worth it — say so deliberately
+
+Two capabilities are doing real product work, and both would have to be rebuilt on a self-hosted runtime:
+
+1. **The credential vault.** Client secrets are substituted into outbound calls at egress and never enter the running agent, which is what makes "no T&G staff member can read your tokens" a true claim rather than a policy promise. A DIY secrets manager gives a weaker guarantee, because the agent would hold plaintext.
+2. **Automatic prompt caching and context compaction.** The engine is a large, byte-identical prefix on every turn; the managed runtime serves it from cache at a tenth of base input cost and compacts long sessions without us building either. That's a margin feature, not a convenience.
+
+So the honest position isn't "escape the vendor." It's **"stay, knowingly, and keep the exit tested"** — which requires the four actions above regardless.
+
+## If the provider doubles pricing tomorrow
 
 **48-hour response:**
-1. Cascade the mechanical stages to a cheap model (the Routing action above).
-2. Cut the per-session input load. Mounting a ~116KB engine into every session pays frontier input rates for a prompt; the planned hardening (a <100k core system prompt + stage playbooks as on-demand skills) is a direct cost lever, not tidiness.
-3. Freeze new onboarding until the pricing model has a usage lever.
+1. Cascade the mechanical stages to the cheap tier.
+2. Cut per-session input load — the engine is delivered as a large mounted file read into context; a leaner core with stage playbooks loaded on demand reduces what's paid for per turn.
+3. Nothing else. Inference is under 1% of revenue at $2,500/tenant/month, so a 2× shock moves gross margin from ~93.6% to ~93.4%.
 
-**The exposure is new, and the commercial model already anticipates it — but the number behind it doesn't exist.** Hosting moves inference from the client's own keys onto T&G's P&L. The pricing model agreed on 22 Jul does contain a usage lever: subscription, 13 months for the price of 12, API cost bundled into the base up to a credit allowance, **overage invoiced the following month rather than hard-stopped, with an alert at 90% of the allowance**. That is the right structure.
+**The honest version:** this scenario doesn't threaten the business. The commercial model already carries the lever anyway — API cost bundled to a credit allowance, overage invoiced the following month with a 90% alert, no hard stop — so a genuine cost shock passes through without renegotiation. **Provider pricing is the wrong thing to worry about here; human oversight per tenant is the number that decides the margin.**
 
-What's missing is the allowance itself. **There is no cost view** — the model was chosen on feel on 27 Jul, so the credit threshold, the overage rate and the margin at target usage are all unset, and leadership collateral still describes EC2/Bedrock rather than the actual runtime. So the honest answer to "what if pricing doubles" is *the structure absorbs it; we don't yet know at what price*. **W45 — putting a real cost figure behind the model choice — is the blocker, and it is Module 3's work.**
-
-## If Anthropic ships a competing product
+## If the provider ships a competing product
 
 **Defensible:**
-- The **PLAN layer** — confirmed strategy, pillars, calendar, budget/ROI — which the client confirms and owns, and which no generic agent arrives holding.
+- The **PLAN layer** — confirmed strategy, pillars, calendar, budget and ROI — which the client confirms and owns, and which no generic agent arrives holding.
 - The **attribution spine**: campaign IDs joining pillar → asset → traffic → enquiry → deal. Decision lineage that neither a model vendor nor a CRM models.
-- Per-tenant data in T&G's own versioned S3, with folder structure preserved in both directions (W67).
-- A named consultant accountable for the strategy. A services moat — real, and it should be priced as services.
+- **Per-tenant data** in T&G's own versioned store, with the integration gate across GA4 + Search Console + LinkedIn that no single platform owns end to end.
+- The **cross-tenant benchmark plane** once it turns — the one asset that gets stronger as the client base grows.
+- A named consultant accountable for the strategy. A services moat: real, and priced as services.
 
-**Not defensible:** the engine prompt. It is markdown, it descends from a public library, and it is the most copyable thing T&G owns. It was made private on 22 Jul to protect it, which was correct — and is also the tell. Stop describing it as the crown jewel.
+**Not defensible:** the engine itself. It's markdown, it descends from a public library, and it's the most copyable thing the business owns. It was made private to protect it, which was correct — and is also the tell. Stop describing it as the crown jewel.
