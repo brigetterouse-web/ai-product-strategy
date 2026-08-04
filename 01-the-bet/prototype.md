@@ -33,11 +33,11 @@ That lean marketing teams of 1–3 at $200K–$1M+ spend will pay for a marketin
 
 ## Kill Criteria
 
-Evidence, with dates. Any one firing means stop, not "review."
+Evidence, not opinion. Any one firing means stop, not "review."
 
 1. **Rework.** If two consecutive tenants' weekly deliverables need >30% human rework before they can ship, the cadence isn't autonomous enough to sell as work. → Stop; reprice as a consultant tool, not a product.
 2. **Labour, not tokens.** If human oversight per tenant exceeds 4 hours/month at steady state, gross margin falls below 80% and the product is a service with a software price. → Stop and either raise price or cut the human from the loop. *(M3 shows this is the real margin risk — inference is under 1% of revenue.)*
-3. **Compounding.** If the cross-tenant benchmark plane is not live by **31 Dec 2026**, concede that Mariella is delivery tooling rather than a product and stop investing in it as one.
+3. **Compounding.** If the cross-tenant benchmark plane is not live **within six months of the hosted platform shipping**, concede that Mariella is delivery tooling rather than a product and stop investing in it as one.
 4. **The wedge.** If more than 1 in 3 onboardings can't clear the GA4 + Search Console + LinkedIn integration gate, the data story that converts the marketer buyer never lands, and the product is competing on speed alone. → Re-scope the wedge or stop.
 
 ---

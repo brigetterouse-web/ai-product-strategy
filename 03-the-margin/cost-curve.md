@@ -53,7 +53,7 @@ Taken from real sessions, Opus 4.8 at `xhigh` effort, list prices.
 | Opus 4.8 / Opus 5 — cache read | $0.50 / MTok |
 | Opus 4.8 / Opus 5 — cache write | $6.25 (5-min) · $10.00 (1-hour) / MTok |
 | Opus 4.8 / Opus 5 — output | $25.00 / MTok |
-| Sonnet 5 — input / output | $2/$10 until 31 Aug 2026, then **$3/$15** |
+| Sonnet 5 — input / output | **$3/$15** standard rate (introductory $2/$10 deliberately excluded) |
 | CMA session runtime | $0.08 per session-hour, billed only while `running` |
 | Web search | $10 per 1,000 searches |
 | Web fetch, file storage, vaults, idle sessions | free |
@@ -61,7 +61,7 @@ Taken from real sessions, Opus 4.8 at `xhigh` effort, list prices.
 Two rate-card facts that affect the model:
 
 - **Session runtime meters only while the session is `running`.** Idle sessions waiting on a human are free, so leaving sessions open between turns costs nothing.
-- **Sonnet 5's introductory pricing ends 31 August 2026.** Every Sonnet figure in this document uses the post-September rate ($3/$15). Modelling on the introductory rate would overstate the cascading saving by a third.
+- **Sonnet 5's introductory pricing expires.** Every Sonnet figure in this document uses the standard rate ($3/$15), not the introductory one. Modelling on introductory pricing would overstate the cascading saving by a third.
 
 ## Cost by feature
 
@@ -170,7 +170,7 @@ v1 listed search-data refresh, integration maintenance, capture sweep, archive h
 
 The measured 41% Opus↔Sonnet delta is real, but it is not a cascading saving — it is what running **the entire product** on Sonnet 5 would save: **~$24 per tenant per month**.
 
-That reframes the open item. The question is not "what ratio should we cascade at," it is **"is Opus 4.8 worth 41% more than Sonnet 5 for marketing strategy work?"** That is a quality judgement with a measurable answer: run the same consultant pass on both and compare the output. It is testable in an afternoon and it is the real content of the model choice made on feel on 27 July.
+That reframes the open item. The question is not "what ratio should we cascade at," it is **"is Opus 4.8 worth 41% more than Sonnet 5 for marketing strategy work?"** That is a quality judgement with a measurable answer: run the same consultant pass on both and compare the output. It is testable in an afternoon, and it is the real content of a model choice currently made on feel.
 
 ### Two levers that beat model choice
 
@@ -182,7 +182,7 @@ That reframes the open item. The question is not "what ratio should we cascade a
 
 **Current pricing:** project/retainer, human-delivered.
 
-**Proposed AI pricing:** **$2,500/month** subscription. 13-month contract at the 12-month price (first month as cooling-off, securing a 12-month commitment). API cost bundled to a credit allowance; overage invoiced the following month with an alert at 90% — no hard stop. A $20–30k one-off was considered and rejected (leadership walk-through, 22 Jul 2026).
+**Proposed AI pricing:** **$2,500/month** subscription. 13-month contract at the 12-month price (first month as cooling-off, securing a 12-month commitment). API cost bundled to a credit allowance; overage invoiced the following month with an alert at 90% — no hard stop. A $20–30k one-off was considered and rejected.
 
 **Model:** **hybrid** — base subscription + metered overage.
 
@@ -197,7 +197,7 @@ That reframes the open item. The question is not "what ratio should we cascade a
 | Inference costs 3× | AI COGS $59 → $176; margin 92.2% → **86.5%** | Absorb it. Overage exists but wouldn't need to fire. |
 | Provider raises prices 50% | AI COGS $59 → $88; margin → **91.0%** | Absorb it. |
 | Heaviest tenant (450 turns) | AI COGS → $117; margin → **89.9%** | Absorb it; overage bills above the $120 allowance. |
-| Sonnet intro pricing ends 1 Sep | +50% on all Sonnet lines | Already modelled at post-September rates. No exposure. |
+| Sonnet introductory pricing expires | +50% on all Sonnet lines | Already modelled at standard rates. No exposure. |
 | NAT gateway chosen, 1 tenant | Infra $19 → $75; margin → **90.0%** | Real at low tenant count, immaterial past ~10 tenants. |
 | **Human oversight rises to 4 hrs/month** | Non-AI COGS $135 → $525; margin → **76.6%** | **This is the real risk.** Cut the human from the loop or raise price. |
 | **Self-serve tier at $300/month** | AI $59 + minimal human $33 + infra $5 = $97; margin **67.7%** — and **48.7%** on a heavy tenant | The module's premise applies in full downmarket. Don't go there. |
