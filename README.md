@@ -14,7 +14,7 @@
 | **The Bet** | M1 | [x] | `01-the-bet/` |
 | **The Moat** | M2 | [x] | `02-the-moat/` |
 | **The Margin** | M3 | [x] | `03-the-margin/` |
-| **The Contract** | M4 | [ ] | `04-the-contract/` |
+| **The Contract** | M4 | [x] | `04-the-contract/` |
 | **The Guardrails** | M5 | [ ] | `05-the-guardrails/` |
 | **The Pitch** | M6 | [ ] | `06-the-pitch/` |
 
@@ -61,7 +61,7 @@
 - **Gross Margin (AI-adjusted):** **92.2%** at expected volume ($2,500 revenue vs $194 COGS). Range **89.9–93.6%** across light and heavy tenants. Of that COGS, **$59 is AI and $130 is one hour of human oversight**.
 - **Cost per turn:** **$0.21 measured** from real production sessions (`sessions.retrieve().usage`), not estimated. Prompt caching verified working — saving ~90% on the largest line.
 - **Feature split:** Leader (PLAN + cadence) $35/mo · Filler (reports, visibility check) $3.50/mo · Killer recurring (campaign production) $18/mo · Killer one-off (consultant setup) $3.46 measured, charged as an onboarding fee.
-- **Pricing Model:** subscription (not one-off; a $20–30k one-off was rejected), **13-month contract at the 12-month price** (first month as cooling-off, securing a 12-month commitment), API cost bundled into the base up to a **$120/month credit allowance** (revised up from $25 once real usage was measured), **overage invoiced the following month** with an alert at 90% rather than a hard stop.
+- **Pricing Model:** subscription (not one-off; a $20–30k one-off was rejected), **13-month contract at the 12-month price** (first month as cooling-off, securing a 12-month commitment), API cost bundled into the base up to a **$120/month credit allowance** (sized against measured usage), **overage invoiced the following month** with an alert at 90% rather than a hard stop.
 - **Cascading Strategy:** **does not apply to this product.** The realistic ratio is ~5% cheap / 95% frontier, not 70/30 — models are session-scoped on Managed Agents, switching them destroys the caching that saves 90%, and by the routing rule almost every session is strategy or client-facing copy. Worth **$1.40/tenant/month (0.06 points)**. The real decision is a whole-product model choice (Opus vs Sonnet 5, **41% measured**, ~$24/tenant/month), and the better levers are **effort tuning** and **session length** — cache reads are 65% of cost and compound within a session.
 - **Break-even at:** infrastructure is recovered by **well under one tenant** (the $19/mo box against $2,310/tenant/month of contribution). Payback against the platform build cost is unquantified — build cost is not yet costed.
 - **The real risk:** human oversight, not tokens. One hour per tenant per month holds 92%; four hours takes it to **77%**. A $300 self-serve tier lands at **68%**, and **49%** on a heavy tenant — the argument for pricing against a salary, not a seat.
@@ -74,11 +74,12 @@
 
 **Why users will trust a probabilistic system.**
 
-- **Reliability Target:**
-- **Golden Dataset:** __ rows, __ adversarial
-- **Confidence UX:** [approach]
-- **HITL Architecture:**
-- **Failure Mode Coverage:**
+- **The stake:** the client publishes Mariella's output under their own brand, so a confident error is not a bad answer — it is **a false claim in market**. Air Canada's tribunal held that a chatbot speaks for the brand; the equivalent here is a fabricated statistic in a published asset. Mariella therefore **competes on receipts, not fluency** — fluency is what model vendors ship for free.
+- **Golden Dataset:** **12 rows** at v1, **5 adversarial** (prompt injection via ingested competitor content, pressure to fabricate a market-leader stat, cross-tenant data extraction, tampered tenant knowledge file, instruction to waive the approval gate). Frozen from one verified tenant, versioned like code, path to ~150 via promoted corrections.
+- **Confidence UX:** **tier on provenance, not self-reported confidence** — a model asserts 95% about an invented figure as readily as a sourced one, so a confidence bar built on it manufactures trust instead of earning it. Three tiers computed at assembly: **Derived** (fully sourced, mapped to a pillar, campaign ID assigned) · **Flagged** (inference marked inline, source ledger shown) · **Held** (missing plan input, dead connection, or a figure that would have to be invented — no asset produced, reason stated).
+- **Reliability Contract:** **0%** unsourced figures in client-facing output (deterministic check, so zero is enforceable) · **100%** plan adherence · **≥70%** first-pass acceptance · **≤1 hr/tenant/month** oversight · **≥98%** cadence reliability · **<0.5%/wk** drift. Latency p95 deliberately dropped — a scheduled cadence with approval gates has no meaningful p95; cadence reliability is the equivalent promise.
+- **HITL Architecture:** **two loops moving in opposite directions.** The client approval gate covers every asset and **never shrinks** — it is the trust product and the reason "the client owns the strategy" is true. The consultant exception queue **must shrink**, capped by the ≤1 hr/tenant/month margin budget. Both are HITL; only one is a cost.
+- **Closes M2's open gap:** Eval scored **H / "None"** in the kill-switch audit. This artifact is the specification that closes it, and the precondition for portability moving from **Locked** toward **Partial**.
 
 → Details: [`04-the-contract/`](04-the-contract/)
 
