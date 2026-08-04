@@ -170,7 +170,7 @@ v1 listed search-data refresh, integration maintenance, capture sweep, archive h
 
 The measured 41% Opus↔Sonnet delta is real, but it is not a cascading saving — it is what running **the entire product** on Sonnet 5 would save: **~$24 per tenant per month**.
 
-That reframes the open item. The question is not "what ratio should we cascade at," it is **"is Opus 4.8 worth 41% more than Sonnet 5 for marketing strategy work?"** That is a quality judgement with a measurable answer: run the same consultant pass on both and compare the output. It is testable in an afternoon, and it is the real content of a model choice currently made on feel.
+That reframes the open item. The question is not "what ratio should we cascade at," it is **"is Opus 4.8 worth 41% more than Sonnet 5 for marketing strategy work?"** That is a quality judgement with a measurable answer: run the same consultant pass on both and compare the output. It is testable in an afternoon, and it is the real content of the standing decision to run every stage on the frontier model: quality first, until a measured comparison earns the downgrade.
 
 ### Two levers that beat model choice
 
@@ -186,7 +186,7 @@ That reframes the open item. The question is not "what ratio should we cascade a
 
 **Model:** **hybrid** — base subscription + metered overage.
 
-**Credit allowance:** set at **$120/month** of AI usage — roughly 2× the expected run-rate of $59 and just above the heavy-tenant case of $117. This is a revision from v1, which set the allowance at $25 against a $9 estimate; that allowance would have fired on almost every tenant. At $120 it fires only on genuinely heavy usage, which is exactly when it should.
+**Credit allowance:** set at **$120/month** of AI usage — roughly 2× the expected run-rate of $59 and just above the heavy-tenant case of $117. Sized against measured usage rather than an estimate, so it fires only on genuinely heavy tenants — which is exactly when it should.
 
 **Why not outcome-based yet.** The campaign-ID attribution spine means Mariella *could* meter on attributed enquiries — the unit the founder buyer already thinks in, and the strongest pricing move available. Holding it back because first-touch attribution needs to be trustworthy before revenue depends on it. **Outcome pricing is the M6 roadmap item, not today's model.**
 

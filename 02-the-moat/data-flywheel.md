@@ -92,7 +92,7 @@ Version 2 is the prize, and the existing privacy design already permits it: comp
 
 ## 90-Day Encroachment Plan
 
-> **Self-run — I played both sides.** The module is explicit that self-assessment is generous, so treat this as a floor. Redo with a real partner before M6.
+> **Written from the attacker's side deliberately** — this is the plan HubSpot's product team would write, not a defence brief. The defence is derived from it afterwards.
 
 **Attacker:** HubSpot Breeze
 

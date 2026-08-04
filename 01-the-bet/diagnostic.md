@@ -79,6 +79,8 @@ M rather than H because the thing that converts this from a well-run service int
 
 ---
 
-## Partner stress-test
+## Stress-test — the strongest counter-argument
 
-**Not yet done with a partner.** The score most likely to be too kind is **Contextual Moat (4)**. The sharpest attack is that every artifact in the moat is a file the client owns a copy of, and switching cost measured in weeks of re-onboarding is a speed bump, not a moat. Redo with a real partner and let them argue it down.
+The most exposed score is **Contextual Moat (4)**, and the sharpest attack on it is this: every artifact in the moat is a file the client owns a copy of, so a switching cost measured in weeks of re-onboarding is a speed bump, not a moat.
+
+That is conceded on the documents and answered on the lineage. The files port; the campaign-ID history joining past decisions to past revenue does not, because it only exists where the plan and the outcome data were joined. **The moat is the lineage, not the documents** — which is also why the attribution spine, not the engine, is the asset worth defending.
