@@ -31,6 +31,19 @@ Orchestrator economics dominate: high value, high infra spend, autonomy risk. Th
 
 That lean marketing teams of 1–3 at $200K–$1M+ spend will pay for a marketing function that **runs** — a living plan that produces every asset against it and attributes the result back to a deal — instead of hiring a $120–180k/yr content person or driving a copilot themselves; and that Think & Grow can host it multi-tenant without any staff member ever seeing a client secret.
 
+### Stated as a bet, not a plan
+
+A plan names a deadline. A bet names a confidence, the evidence that moves it, and the point at which we stop. This bet is two bets with different odds, and saying so is the whole point:
+
+| | Confidence | Why that number |
+|---|---|---|
+| **The service bet** — tenants pay this price and the work ships | **~85%** | Paying engagements exist, daily power users reach for it unprompted, the alternative is quantified, and the margin is measured at 92% |
+| **The product bet** — it compounds into something worth more than its delivery | **~60%** | The loop that would make it compound across clients is the newest part of the design, and the engine doing the work is the most copyable asset in the business |
+
+**How we'll know:** the four measurements below are the instrument, not a review cadence — rework rate per tenant, oversight hours per tenant, whether the benchmark plane turns, and onboarding pass rate through the integration gate. Three of the four are already measurable today.
+
+**When we stop:** any one criterion firing. Not "review" — stop.
+
 ## Kill Criteria
 
 Evidence, not opinion. Any one firing means stop, not "review."

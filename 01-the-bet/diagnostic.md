@@ -13,6 +13,12 @@ Mariella is a hosted marketing function. Each client is a tenant on Think & Grow
 
 **Commercial model:** subscription (a $20–30k one-off was considered and rejected), 13-month contract at the 12-month price, API cost bundled to a credit allowance with overage invoiced the following month and an alert at 90%.
 
+## Non-consumption, not displacement
+
+The $120–180k/yr content hire is the **price anchor**, not the incumbent being beaten. A team of one to three people running $200K–$1M+ in spend usually cannot fund that hire at all: the role stays unfilled and the work goes undone, or it gets spread across people whose actual job is something else. What Mariella sells is therefore a behaviour this ICP did not previously have at any price it could pay — a marketing function that plans, produces and attributes continuously.
+
+That distinction sets strategy, not just positioning. A displacement bet is judged against a specific person's output and competes on being better than them. A **non-consumption win** competes against nothing happening at all — which is why the wedge is the data story (proof the function is running) rather than a quality comparison against an agency or a hire, and why the integration gate, not the copy quality, is the thing that decides whether an onboarding converts.
+
 > Scored 1 = pain, 5 = strong. Calibration: Figma = deep moat, thin ChatGPT wrapper = shallow.
 
 | Axis | Score |
@@ -65,6 +71,12 @@ The scarce ingredient is the judgment written into the engine. Written judgment 
 
 **Named attacker:** **Anthropic** (anthropic.com — Claude Agent Skills / skills marketplace). Uncomfortable, and that's the point: **the same vendor supplies the runtime and the substitute.** Second-order: **OpenAI AgentKit** (openai.com).
 
+**Then what — the answer, not the flinch.** If a model vendor ships a native marketing agent free tomorrow, the engine stops being an asset that day. What does not ship with it: this tenant's confirmed PLAN layer, the campaign-ID lineage joining past decisions to past revenue, the tenant's data in T&G's own store, a working integration gate across GA4 + Search Console + LinkedIn, and the cross-tenant benchmark. A vendor can ship the reasoning. It cannot ship *this client's* accumulated decisions or *this cohort's* performance history.
+
+So the response is already chosen: stop calling the engine the IP and move the claim to the lineage. Note the asymmetry — the same event that destroys the engine's scarcity also raises our floor, because Mariella runs on that runtime. A better native agent makes the product cheaper and stronger at the same moment it makes it more copyable. That is why the vendor position is *stay knowingly and keep the exit tested*, not escape (see [`../02-the-moat/kill-switch.md`](../02-the-moat/kill-switch.md)).
+
+**Why 2 and not 1:** the engine is fully exposed, but the tenant store, the attribution lineage and the integration gate cannot be shipped by a model vendor at all.
+
 ---
 
 ## Top Vulnerability
@@ -72,6 +84,8 @@ The scarce ingredient is the judgment written into the engine. Written judgment 
 **Three of Mariella's four learning loops compound inside a tenant and the fourth barely compounds across them — so the product gets better for every client it serves while the asset doing the work is portable text on the runtime of the vendor most likely to replace it.**
 
 ## Confidence: **M**
+
+**As a distribution, not a verdict:** ~**85%** that Mariella sells and delivers as a service at this price · ~**60%** that it compounds into a product rather than remaining excellent delivery tooling. **M** is the composite of those two — the service bet is close to settled, the product bet is not (see [`prototype.md`](prototype.md)).
 
 The demand side is answered: a real ICP with a quantified alternative (a content hire), a pricing model agreed at leadership level, paying engagements, and daily power users who reach for it rather than dutifully log in. The architecture is right — per-tenant isolation, credentials the operator can't read, a decision layer the client owns.
 

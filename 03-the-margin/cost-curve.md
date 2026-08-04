@@ -140,7 +140,7 @@ At scale the decision is immaterial. At one or two tenants it is 2 points of mar
 
 ## Cascading strategy
 
-**Today:** every stage runs on Opus 4.8 at `xhigh` effort. No cascading is implemented.
+**Today:** every stage runs on Opus 4.8 at `xhigh` effort — single-model by design, for the three structural reasons below.
 
 **The expected cascade ratio is ~5% cheap / 95% frontier — not the 70/30 this module assumes.** Three properties of the product drive that, and they are structural rather than a matter of tuning.
 
@@ -160,7 +160,7 @@ At scale the decision is immaterial. At one or two tenants it is 2 points of mar
 | AI-visibility check | 6 | Cheap |
 | **Cheap-eligible** | **14 of 226** | **6%** |
 
-v1 listed search-data refresh, integration maintenance, capture sweep, archive hygiene and calendar mechanics as cheap stages. Most of those are sub-steps *inside* frontier sessions and cannot be routed separately, and the integration-dependent ones describe work that is not built yet.
+Stages that look cheap in the abstract — search-data refresh, integration maintenance, capture sweep, archive hygiene, calendar mechanics — do not qualify on inspection. Most are sub-steps *inside* frontier sessions and cannot be routed separately, and the integration-dependent ones describe work that is not built yet.
 
 **Dollar impact:** a 6% cascade at a 40% saving is **$1.40 per tenant per month** — 0.06 points of gross margin.
 
@@ -170,7 +170,11 @@ v1 listed search-data refresh, integration maintenance, capture sweep, archive h
 
 The measured 41% Opus↔Sonnet delta is real, but it is not a cascading saving — it is what running **the entire product** on Sonnet 5 would save: **~$24 per tenant per month**.
 
-That reframes the open item. The question is not "what ratio should we cascade at," it is **"is Opus 4.8 worth 41% more than Sonnet 5 for marketing strategy work?"** That is a quality judgement with a measurable answer: run the same consultant pass on both and compare the output. It is testable in an afternoon, and it is the real content of the standing decision to run every stage on the frontier model: quality first, until a measured comparison earns the downgrade.
+That reframes the open item. The question is not "what ratio should we cascade at," it is **"is Opus 4.8 worth 41% more than Sonnet 5 for marketing strategy work?"** — and that one is decided: yes, deliberately.
+
+The 95/5 split is the reason. When 95% of turns are strategic reasoning against a confirmed plan, there is no cheap tier to route to and the model is not a cost variable — it is the product. Trading reasoning quality to save **$24 per tenant per month**, on a $2,500 subscription where AI is already 2% of revenue, spends the one thing clients buy to recover one point of a 92% margin. The frontier model is not a default that escaped scrutiny; it is what this architecture requires.
+
+The measurable version — run the same consultant pass on both and compare the output — is worth doing as periodic validation of that decision, not as an unresolved question.
 
 ### Two levers that beat model choice
 

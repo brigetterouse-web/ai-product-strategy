@@ -24,11 +24,12 @@
 
 **What we're building, for whom, why now.**
 
-- **Product:** Mariella — a living marketing PLAN that PRODUCEs every asset against it and attributes the result back to a deal. For lean marketing teams of 1–3 at $200K–$1M+ spend; multi-tenant, T&G-hosted. Displaces a $120–180k/yr content hire.
+- **Product:** Mariella — a living marketing PLAN that PRODUCEs every asset against it and attributes the result back to a deal. For lean marketing teams of 1–3 at $200K–$1M+ spend; multi-tenant, T&G-hosted. Priced against a $120–180k/yr content hire.
 - **AI Value Archetype:** Orchestrator (Copilot surface, Creator output)
+- **Demand type:** **non-consumption win** — the ICP mostly can't fund that hire, so the behaviour being sold didn't previously exist at a price they could pay. Competing against nothing happening, not against an incumbent.
 - **Vulnerability Scores:** Moat **4**/5 · Data **4**/5 · Platform **2**/5
 - **Top Risk:** Three of four learning loops compound inside a tenant and the fourth barely compounds across them — the product gets better for every client it serves while the asset doing the work is portable text on the runtime of the vendor most likely to replace it.
-- **Confidence:** **M**
+- **Confidence:** **M** — ~**85%** on the service bet (sells and delivers at this price) · ~**60%** on the product bet (compounds rather than staying delivery tooling)
 - **Prototype:** the hosted multi-tenant runtime — per-tenant isolated stores, client credentials vaulted so no staff member can read them, proven end to end on a full setup pass. The open action is a client-facing demo — see `01-the-bet/prototype.md`
 - **Kill Criteria:** >30% rework on two consecutive tenants · human oversight >4 hrs/tenant/month · no benchmark plane within six months of hosted launch · >1 in 3 onboardings fail the integration gate
 
