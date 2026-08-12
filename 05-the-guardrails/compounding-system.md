@@ -24,21 +24,28 @@ Context moves freely inside one client but is deliberately walled off between cl
 
 **Scope:** all client-facing output; excludes internal staff AI use.
 
-**Autonomy boundaries:** read and draft, auto; publish, send and PLAN-amend, never auto; no write-back tool; cross-client aggregation company-level only.
+**Autonomy boundaries:** read and draft, auto. Publish, send and PLAN-amend, never auto. No write-back tool. Cross-client aggregation company-level only, and human approval required.
 
-**Escalation triggers:** held tier, unsourced numeral, injection flag, PLAN change, first run for a client, gate-waiver request, regulated claims.
+**Escalation triggers:** (1) held tier · (2) unsourced numeral · (3) injection flag · (4) PLAN change · (5) first run for a client · (6) gate-waiver request · (7) regulated claims.
 
-**Audit cadence:** rule checks at assembly; weekly judge run; monthly tier and escalation review; quarterly privacy review.
+**Audit cadence:**
 
-**Regulatory exposure:** AU Privacy Act / APPs primary; GDPR if EU contacts; EU AI Act limited-risk; email drafted, so the client is sender of record.
+| When | Check | Owner |
+|------|-------|-------|
+| Real-time | rule checks at assembly | Brigette |
+| Weekly | judge run | Alex |
+| Monthly | tier and escalation review | Brigette |
+| Quarterly | privacy review | Alex |
+
+**Regulatory exposure:** AU Privacy Act / APPs primary; GDPR if EU contacts; EU AI Act limited-risk. **Risk tier: limited.** Controls: email is drafted by the agent and the client remains sender of record; a golden-set regression gate on the quality/eval loop (corrections → golden rows → company quality bar) — *specified, not yet running (MAR-56), so the weekly judge run has nothing to execute until it lands.*
 
 ## Agent Topology
 
-| Agent | Can | Can't |
-|-------|-----|-------|
-| Orchestrator | run sessions, mount files, harvest output | read credentials, publish, cross a client |
-| Consultant (setup) | research, write the knowledge base | publish, send, amend PLAN unasked |
-| Client (cadence) | read PLAN and data, draft assets | send, publish, write back |
+| Agent | Can | Can't | Approval owner |
+|-------|-----|-------|----------------|
+| Orchestrator | run sessions, mount files, harvest output | read credentials, publish, cross a client | Brigette |
+| Consultant (setup) | research, write the knowledge base | publish, send, amend PLAN unasked | Alex |
+| Client (cadence) | read PLAN and data, draft assets | send, publish, write back | Brigette |
 
 ## Shadow AI Audit
 
