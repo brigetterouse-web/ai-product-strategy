@@ -1,60 +1,20 @@
 # The Prototype Bet
 
-## What I Built
+**What I built:** a multi-tenant runtime, in build. The engine has run end-to-end as a prototype (a setup pass wrote a real client's knowledge base; a client run drew from it). The production server (per-tenant isolation, a credential vault that substitutes secrets at egress, scheduled runs) is still in build. Two layers share one store: consultant setup (one-off) and client cadence. Onboarding is charged as a services fee and kept out of the product moat; there's no ongoing curation.
 
-A hosted multi-tenant runtime for the Mariella engine. An orchestrator drives one session per tenant: it mounts the engine plus that tenant's PLAN and knowledge files from their isolated store, drives the conversation through the engine's human-approval gates, and harvests the outputs back into versioned per-tenant storage. Client credentials live in a vault and are substituted into outbound API calls at egress, so they never enter the running agent — no T&G staff member can read a client token, and every access is logged.
+**Tool:** Cursor / Claude Code — Node on a managed agent runtime, object storage, credential vault. A clickable mockup wouldn't test the real risk, which is whether the multi-tenant runtime works.
 
-Proven end to end: a full consultant setup pass researched a real company and wrote its complete knowledge base; nested folder structure round-trips in both directions; a client-layer run then located and drew from that tenant's brand voice. The two engine layers (consultant for setup, client for the recurring cadence) share one tenant store with a handover marker between them.
+**Prototype link:** ⟨ add — interim: a 60-second capture of a live tenant run ⟩
 
-## Tool Used
+**Archetype:** Orchestrator (approval-gated Copilot surface, Creator output).
 
-Cursor / Claude Code — Node against a managed agent runtime, with per-tenant object storage and a credential vault.
+**The bet:** lean B2B teams already asking "can you do it for us?" will pay for a marketing function that runs and ties results back to a deal, hosted multi-tenant with no secret ever seen by staff.
 
-Deliberately **not** v0 or Lovable. The bet is a *runtime* — multi-tenant, secret-isolated, scheduled — not a screen. A clickable mock would prove less than the working thing does.
+**Confidence:** ships ~85%; a client pays $2,500/mo ~50%; compounds ~45%.
 
-## Prototype Link
+**Kill criteria:**
 
-**The gap is a client-facing demo, and it's the one thing worth building next.** What exists is the runtime and a recorded internal walk-through; what's missing is the artefact a prospect can watch. The primary user is producing a screen recording of the real workflow — that's what belongs in this field, and it doubles as sales collateral.
-
-Interim for M6: link the walk-through recording, or a 60-second capture of a live tenant run.
-
-## AI Value Archetype
-
-**Orchestrator** (dominant) — two modes and a mode router: PLAN decides what and when, PRODUCE makes the assets from the plan, both reading and writing the same living decision layer, with campaign IDs threading attribution from pillar to deal, on a scheduled cadence.
-
-- **Copilot** surface: human approval on every asset; never publishes without an explicit trigger; email always drafted, never sent.
-- **Creator** output: the assets themselves — social, ads, lead magnets, emails, website copy, testimonials.
-
-Orchestrator economics dominate: high value, high infra spend, autonomy risk. That's why M3 (margin) and M5 (guardrails) are the sharp modules for this product.
-
-## The Bet in One Sentence
-
-That lean marketing teams of 1–3 at $200K–$1M+ spend will pay for a marketing function that **runs** — a living plan that produces every asset against it and attributes the result back to a deal — instead of hiring a $120–180k/yr content person or driving a copilot themselves; and that Think & Grow can host it multi-tenant without any staff member ever seeing a client secret.
-
-### Stated as a bet, not a plan
-
-A plan names a deadline. A bet names a confidence, the evidence that moves it, and the point at which we stop. This bet is two bets with different odds, and saying so is the whole point:
-
-| | Confidence | Why that number |
-|---|---|---|
-| **The service bet** — tenants pay this price and the work ships | **~85%** | Paying engagements exist, daily power users reach for it unprompted, the alternative is quantified, and the margin is measured at 92% |
-| **The product bet** — it compounds into something worth more than its delivery | **~60%** | The loop that would make it compound across clients is the newest part of the design, and the engine doing the work is the most copyable asset in the business |
-
-**How we'll know:** the four measurements below are the instrument, not a review cadence — rework rate per tenant, oversight hours per tenant, whether the benchmark plane turns, and onboarding pass rate through the integration gate. Three of the four are already measurable today.
-
-**When we stop:** any one criterion firing. Not "review" — stop.
-
-## Kill Criteria
-
-Evidence, not opinion. Any one firing means stop, not "review."
-
-1. **Rework.** If two consecutive tenants' weekly deliverables need >30% human rework before they can ship, the cadence isn't autonomous enough to sell as work. → Stop; reprice as a consultant tool, not a product.
-2. **Labour, not tokens.** If human oversight per tenant exceeds 4 hours/month at steady state, gross margin falls below 80% and the product is a service with a software price. → Stop and either raise price or cut the human from the loop. *(M3 shows this is the real margin risk — inference is under 1% of revenue.)*
-3. **Compounding.** If the cross-tenant benchmark plane is not live **within six months of the hosted platform shipping**, concede that Mariella is delivery tooling rather than a product and stop investing in it as one.
-4. **The wedge.** If more than 1 in 3 onboardings can't clear the GA4 + Search Console + LinkedIn integration gate, the data story that converts the marketer buyer never lands, and the product is competing on speed alone. → Re-scope the wedge or stop.
-
----
-
-## Artifact #0 — the CEO question
-
-See [`ceo-question.md`](ceo-question.md). Private until M6.
+- Rework >30% on two consecutive clients → reprice as a consultant tool.
+- Oversight (beta 5–7 hrs) not ≤2 hrs by month 3 → reprice as a service.
+- No cross-client benchmark within 6 months → it's delivery tooling.
+- >1 in 3 onboardings fail the integration gate → re-scope.
