@@ -4,7 +4,7 @@
 
 ## Roadmap
 
-*24 initiatives rolled up from the 75-row backlog export (`mariella-backlog-short.csv`). Pillar shown in brackets where the table has no component column.*
+*24 initiatives rolled up from a 75-item backlog export. Pillar shown in brackets where the table has no component column.*
 
 ### Horizon 1, Ship (0-4 weeks)
 
