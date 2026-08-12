@@ -8,8 +8,7 @@ Three sentences. No polish. Private until M6, where the gap between this and you
 
 ## My answer
 
-
-We're building an AI marketing engine that aims to create data-led martketing across multiple siloed system. It runs an audit and integrations a client's various sytems so that marketers can plan their stragedy as well as produce outcomes that are based on not only competitive best practice (AEO,SEO & GEO) but based on their own data on 'what works.' The strategy is to own the professional-services marketing workflow end to end rather than sell another content tool. 
+We're building an AI marketing engine that aims to create data-led marketing across multiple siloed systems. It runs an audit and integrates a client's various systems so that marketers can plan their strategy as well as produce outcomes that are based on not only competitive best practice (AEO, SEO & GEO) but based on their own data on 'what works.' The strategy is to own the professional-services marketing workflow end to end rather than sell another content tool.
 
 ---
 
