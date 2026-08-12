@@ -2,7 +2,7 @@
 
 **Product:** Mariella — hosted multi-tenant AI marketing engine.
 
-Guardrails built and running (PLAN-FIRST gate, source tags, flag-and-hold, approval on every asset, email drafted but not sent). The eval layer is designed but early; the numbers are targets.
+Guardrails built and running (PLAN-FIRST gate, source tags, flag-and-hold, approval on every asset, email drafted but not sent). The golden set is specified below, but **no harness runs it yet** (MAR-56), so every number here is a target rather than a measurement.
 
 ## Golden Dataset Spec
 

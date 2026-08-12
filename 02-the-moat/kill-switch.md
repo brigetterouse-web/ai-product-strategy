@@ -10,7 +10,7 @@
 | Provider | one vendor — the agent control plane (sandboxes, vault, scheduled runs) | M | keep `runtime.*` provider-agnostic; spike a second adapter |
 | Abstraction | store and runtime behind one interface | L | new calls go through the interface, not the SDK |
 | Routing | single-model; switching breaks the cache | L | populate the per-stage model field |
-| Eval | golden-set harness built, not yet gating deploys | M | freeze the set; gate deploys on regression |
+| Eval | golden set specified (M4), no harness runs it | H | build the harness (MAR-56), then gate deploys on regression |
 
 ## Portability Score
 
@@ -18,7 +18,7 @@
 
 ## If the provider doubles pricing
 
-Not a real threat: inference is ~2% of revenue and the credit allowance passes usage through. Margin is set by oversight hours; inference cost is minor.
+Absorbable, but not the non-issue it first looked like. Inference is ~3–8% of revenue with caching on (M3: ~$75–200 against $2,500) and ~9–40% without it — and caching is still unbuilt (MAR-55). Once it lands, a doubling is covered by the credit allowance passing usage through, and oversight hours still set the margin. Until then, a price rise is a live margin risk.
 
 ## If the provider ships a competing product
 
