@@ -14,7 +14,7 @@
 
 **Kill criteria:**
 
-- Rework >30% on two consecutive clients → reprice as a consultant tool.
-- Oversight (beta 5–7 hrs): target ≤2 hrs by month 3, kill at >4 hrs → reprice as a service. *(Restated in M6 — ≤2 is the target, >4 the trigger; M3 puts ~7 hrs at ~72% margin, so 2–4 hrs is costly, not fatal.)*
+- If we have to rework >30% on two consecutive clients → reprice as a consultant tool.
+- The cost of human overversight becoming too high, in beta the target is 5–7 hrs, if it is ~10 → reprice as a service.
 - No cross-client benchmark within 6 months → it's delivery tooling.
 - >1 in 3 onboardings fail the integration gate → re-scope.
