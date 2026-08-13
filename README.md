@@ -1,4 +1,4 @@
-# Mariella — hosted, multi-tenant AI marketing engine for lean B2B teams.
+# README
 
 ## Strategy at a Glance
 
