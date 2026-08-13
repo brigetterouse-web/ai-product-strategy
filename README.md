@@ -1,9 +1,5 @@
 # Mariella — hosted, multi-tenant AI marketing engine for lean B2B teams.
 
-> A living strategy built across 6 sessions. Each module adds one component. By Module 6, this repo IS the strategy — version-controlled, board-ready, portable.
-
----
-
 ## Strategy at a Glance
 
 | Component | Module | Status | Key Artifact |
@@ -25,7 +21,7 @@
 - **AI Value Archetype:** Orchestrator.
 - **Vulnerability Scores:** Moat 2/5 · Data 2/5 · Platform 2/5.
 - **Top Risk:** differentiation — a client buys the outcome without needing it to be us.
-- **Confidence:** M — ~85% ships · ~50% pay $2,500/mo · ~45% compounds.
+- **Confidence:** M — ~65% if we ship the server, ~25% if it stays as is.
 - **Prototype:** [link pending — 60-second capture of a live tenant run]; engine proven end-to-end, multi-tenant runtime in build.
 - **Kill Criteria:** rework >30% on two clients → consultant tool · oversight >4 hrs at month 3 → service · no benchmark in 6 mo → delivery tooling · >1 in 3 onboardings fail the gate → re-scope.
 
