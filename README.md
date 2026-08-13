@@ -82,14 +82,14 @@
 
 **What breaks when this scales, and what compounds.**
 
-- **Compounding System:** | Loop | Input | Output | Compounds? | Status | |------|-------|--------|-----------|--------| | Recursive learning | approval edits, rejections | next run drops rejected hooks, resurfaces deferred ideas | Y | active | |…
+- **Compounding System:** | Loop | Input | Output | Compounds? | Status | |------|-------|--------|-----------|--------| | Recursive Learning | approval edits, rejections | next run drops rejected hooks, resurfaces deferred ideas | Y | active | |…
 - **Governance Posture:** all client-facing output; excludes internal staff AI use.
-- **Autonomy Boundaries:** read and draft, auto; publish, send and PLAN-amend, never auto; no write-back tool; cross-client aggregation company-level only.
-- **Escalation Triggers:** held tier, unsourced numeral, injection flag, PLAN change, first run for a client, gate-waiver request, regulated claims.
-- **Audit Cadence:** rule checks at assembly; weekly judge run; monthly tier and escalation review; quarterly privacy review.
+- **Autonomy Boundaries:** read and draft, auto. Publish, send and PLAN-amend, never auto. No write-back tool. Cross-client aggregation company-level only, and human approval required.
+- **Escalation Triggers:** (1) held tier · (2) unsourced numeral · (3) injection flag · (4) PLAN change · (5) first run for a client · (6) gate-waiver request · (7) regulated claims.
+- **Audit Cadence:** | When | Check | Owner |
 - **Shadow AI Audit (user-side):**
-- **Agent Boundaries:** | Agent | Can | Can't | |-------|-----|-------| | Orchestrator | run sessions, mount files, harvest output | read credentials, publish, cross a client | | Consultant (setup) | research, write the knowledge base | publish, send, amend PLAN u…
-- **Regulatory Exposure:** AU Privacy Act / APPs primary; GDPR if EU contacts; EU AI Act limited-risk; email drafted, so the client is sender of record.
+- **Agent Boundaries:** | Agent | Can | Can't | Approval owner | |-------|-----|-------|----------------| | Orchestrator | run sessions, mount files, harvest output | read credentials, publish, cross a client | Brigette | | Consultant (setup) | research, write the…
+- **Regulatory Exposure:** AU Privacy Act / APPs primary; GDPR if EU contacts; EU AI Act limited-risk. **Risk tier: limited.** Controls: email is drafted by the agent and the client remains sender of record; a golden-set regression gate on the qua…
 
 → Details: [`05-the-guardrails/`](05-the-guardrails/)
 
@@ -99,11 +99,11 @@
 
 **How you get this funded, shipped, and adopted.**
 
-- **Horizon 1 (Now):** Eval dashboard v1 to the beta · Effort tuning on mechanical sessions · Per-stage model field (swap seam)
-- **Horizon 2 (Next):** Ship the server, onboard client #2 · Quote $2,500, land the first paying client · Close the deal-outcome join · Cut oversight to ≤2 hrs
-- **Horizon 3 (Bet):** Benchmark as engine input · Outcome-based pricing pilot · Self-hosted-sandbox drill · Publishing autonomy
-- **Board Narrative:** a 1–3 person marketing team spending $200K–$1M a year can't fund the hire that would make that spend work, so we sell them that person's job, running.
-- **Ask:** capacity to ship the server and land the first clients over ~3 months, hard review at month 3 against the H2 kill lines. *(set the figure and headcount)*
-- **Key Strategic Change:**
+- **Horizon 1 (Now):** Close the consultant-to-client handover · Always-on host for the orchestrator · Orchestrator hardening and unattended cadence · Engine v7.6 join-first audit · Refusal path when no CRM is connected · Prove isolation and secret containment · Cost view and per-run metering · Finalise pricing and fix the collateral · Demand tests
+- **Horizon 2 (Next):** Land the first paying client at $2,500 *(Margin)* · Migrate pilot client and onboard client #2 *(Moat)* · Wire GA4, Search Console and LinkedIn *(Bet)* · Credential model and per-tenant Vaults *(Guardrails)* · Onboarding and integration gate *(Contract)* · Client web interface *(Bet)* · Close the deal-outcome join *(Bet)* · Cut oversight to two hours per client *(Contract)* · Eval harness and acceptance metric *(Contract)* · COGS levers: caching and effort tuning *(Margin)* · Benchmark warehouse and priors *(Moat)* · Portability seam and escape-hatch drill *(Moat)* · Pre-pilot security, DPA and monitoring *(Guardrails)*
+- **Horizon 3 (Bet):** Publishing autonomy *(Guardrails)* · Outcome-based pricing pilot *(Margin)*
+- **Board Narrative:** A 1-3 person marketing team spending $200K-$1M a year can't fund the hire that would make that spend work, so we sell them that person's job, running.
+- **Ask:** Capacity to ship the server, run the demand tests, and land the first clients over ~3 months, with a hard review at month 3 against the H2 kill lines.
+- **Key Strategic Change:** margin 95% → ~80% with caching named as load-bearing, top vulnerability moved to differentiation, confidence split by claim, the "paying engagements" claim dropped, and four demand initiatives added b…
 
 → Details: [`06-the-pitch/`](06-the-pitch/)
