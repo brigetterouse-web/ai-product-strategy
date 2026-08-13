@@ -1,8 +1,5 @@
 # Data Flywheel Map
 
-**Product:** Mariella — hosted multi-tenant AI marketing engine.
-Mechanisms built and proven on internal use; company-level loops need the server and more clients.
-
 ## Flywheel Loops
 
 | Loop | What It Measures | Score 1 | Score 5 | Score |
@@ -13,20 +10,20 @@ Mechanisms built and proven on internal use; company-level loops need the server
 | Network | Does each new user / team make the product better for everyone? | Isolated | Strong network effects | 1/5 |
 
 ### Correction Loop — 3/5
-What do you capture today? Approval edits and rejections, logged as signals.
+What do you capture today? Approval edits and rejections, logged as signals as well as data performance of published content. 
 How does it compound? Applied as overrides next run. Proven internally, not on a paying client; no retraining.
 
 ### Preference Loop — 3/5
-What do you capture today? Brand voice, style guide and PLAN, per client.
-How does it compound? Enforced every run. Human-seeded, internal only.
+What do you capture today? 7 org knowledge docs (including brand voice, style guide, etc) informed by CRM data, EDM data, Website analytics & strategy documents) per client.
+How does it compound? Enforced every run. Human-seeded. 
 
 ### Domain Context Loop — 3/5
-What do you capture today? One confirmed PLAN per client.
-How does it compound? One PLAN improves six asset types. Used heavily internally.
+What do you capture today? faceted and interconnected 'Plan' outputs that are enactments of the strategy doc that emerges from the consultant run audit (i.e. event calendars and content plans to reach a 10% recuring customer rate). 
+How does it compound? Data feedback from user and integrations connected. 
 
 ### Network Loop — 1/5
-What do you capture today? Nothing cross-client yet.
-How does it compound? Cross-client benchmark is impossible with one client; not built yet.
+What do you capture today? Nothing cross-client yet, awaiting server build. 
+How does it compound? Cross-client benchmark is impossible with one client however it would via benchmarking. 
 
 **Total Flywheel Score:** 10/20
 **Weakest Loop:** Network (1) — the loop HubSpot Breeze attacks directly.
