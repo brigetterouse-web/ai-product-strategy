@@ -8,7 +8,7 @@
 
 **Contextual Moat — 2/5**
 *Workflow depth × switching cost. Would users leave in a weekend if a competitor showed up?*
-Score rationale: No one embedded yet; switching cost is on paper until a client accrues months of use with integrations.
+Score rationale: No one embedded yet; switching cost is on paper until a client accrues months of use with integrations. In terms of integrations, users could swap in a weekend but the data-lead workflow would take some technical ability and time to recreate. 
 Named attacker: HubSpot Breeze — same CRM data, already paid for.
 
 **Data Advantage — 2/5**
@@ -18,7 +18,7 @@ Named attacker: Semrush — bigger sample, so win on relevance.
 
 **Platform Exposure — 2/5**
 *Encroachment risk × pivot speed. If Apple/Google/OpenAI ships your hero feature native, then what?*
-Score rationale: Engine is copyable markdown on the vendor's runtime.
+Score rationale: The server build (in progress) minimises platform exposure because outcomes could be benchmarked against other users and therefore is a value add to customers that anthropic/google/OpenAi couldn't ship. However, this hasn't been compelted and relies on mutliple users. 
 Named attacker: Anthropic — supplies our runtime and the substitute.
 
 ## Top Vulnerability
