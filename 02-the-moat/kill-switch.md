@@ -19,4 +19,4 @@ Absorbable, but not the non-issue it first looked like. Inference is ~3–8% of 
 
 ## If the provider ships a competing product:
 
-**Defensible:** the client-owned PLAN, the campaign-ID lineage, per-client data, the benchmark once it exists. **Not defensible:** The current state of the engine, which is copyable markdown.
+**Defensible:** the client-owned PLAN, the campaign-ID lineage, per-client data, the benchmark once it exists. **Not defensible:** the current state of the engine, which is copyable markdown.
