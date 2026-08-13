@@ -31,9 +31,7 @@ Audit cadence:
 | Monthly | tier and escalation review | Brigette |
 | Quarterly | privacy review | Alex |
 
-Regulatory exposure (EU AI Act / other): AU Privacy Act / APPs primary; GDPR if EU contacts; EU AI Act limited-risk. 
-Risk tier: limited. 
-Controls: the agent drafts email and the client stays sender of record; a golden-set regression gate covers the quality/eval loop, but it is specified not running, so the weekly judge run has nothing to execute until it lands.
+Regulatory exposure (EU AI Act / other): AU Privacy Act / APPs primary; GDPR if EU contacts; EU AI Act limited-risk. Risk tier: limited. Controls: the agent drafts email and the client stays sender of record; a golden-set regression gate covers the quality/eval loop, but it is specified not running (MAR-56), so the weekly judge run has nothing to execute until it lands.
 
 ## Agent Topology
 
@@ -55,4 +53,4 @@ Controls: the agent drafts email and the client stays sender of record; a golden
 
 Total tools found: 5
 Tools after triage: 3 actioned (1 build, 2 partner); 1 ignore, 1 TBD
-Estimated hidden spend: $0/mo (surveyed users)
+Estimated hidden spend: ~$90–160/client/mo (estimated from paid-tier list prices of the tools users work around with; not yet surveyed)
